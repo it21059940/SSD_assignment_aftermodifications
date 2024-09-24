@@ -1,0 +1,373 @@
+/* --------------------General Styles-------------------- */
+
+/* Shared Styles */
+.border {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  font-family: "Poppins", sans-serif;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #416D19;
+  border-radius: 10px;
+}
+
+.form-group textarea {
+  height: 100px;
+}
+
+.form-group select {
+  height: 40px;
+}
+
+.form-buttons {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.form-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.form-buttons button:first-child {
+  color: #416D19;
+  background-color: #BFEA7C;
+}
+
+.form-buttons button:last-child {
+  background-color: #416D19;
+  color: white;
+}
+
+.button-primary {
+  background-color: #416D19;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.button-primary:hover {
+  background-color: #355f13;
+  transform: scale(1.05);
+}
+
+/* --------------------Appointment1-------------------- */
+
+.appointment-form {
+  width: 100%;
+  max-width: 700px; /* Set a maximum width if needed */
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid #416D19;
+  border-radius: 5px;
+}
+
+.appointment-form h2 {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* --------------------Appointment2-------------------- */
+
+.cleaner-type-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.cleaner-type-button {
+  background-color: #BFEA7C;
+  color: #416D19;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin: 0 10px;
+}
+
+.cleaner-type-button:hover {
+  background-color: #416D19;
+  color: white;
+}
+
+.cleaner-type-button.active {
+  background-color: #416D19;
+  color: white;
+}
+
+/* --------------------Appointment3--------------------- */
+
+.cleaner-list,
+.team-list {
+  display: grid;
+  gap: 20px;
+}
+
+.cleaner-item,
+.team-item {
+  background-color: #BFEA7C;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.cleaner-item:hover,
+.team-item:hover {
+  background-color: #416D19;
+  color: white;
+}
+
+.cleaner-item h3,
+.team-item h3 {
+  margin-bottom: 10px;
+}
+
+.cleaner-item p,
+.team-item p {
+  font-size: 1.2em;
+}
+
+/* --------------------AppointmentDashboard-------------------- */
+
+.filter-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filter-section label {
+  font-size: 1.2em;
+  margin-right: 10px;
+}
+
+.filter-section select {
+  padding: 5px;
+  font-size: 1em;
+}
+
+.appointment-list {
+  display: grid;
+  gap: 20px;
+}
+
+.appointment-item {
+  background-color: #BFEA7C;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.appointment-item:hover {
+  background-color: #416D19;
+  color: white;
+}
+
+.appointment-details {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #416D19;
+  border-radius: 5px;
+}
+
+.appointment-details h3 {
+  font-size: 1.5em;
+  color: #416D19;
+  margin-bottom: 20px;
+}
+
+.appointment-details p {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.appointment-details button {
+  margin-top: 10px;
+}
+
+.appointment-details button:hover {
+  transform: scale(1.05);
+}
+
+
+
+/* ====================== My Appointments =================================== */
+
+.my-appointments-container {
+  padding: 20px;
+}
+
+.my-appointments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.my-appointments-header h2 {
+  font-size: 40px;
+  color: #416D19;
+}
+
+.book-appointment-btn {
+  background-color: #BFEA7C;
+  color: #416D19;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.book-appointment-btn:hover {
+  background-color: #416D19;
+  color: #fff;
+}
+
+/* -------- */
+
+.buttonset {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.view-btn,
+.edit-btn,
+.delete-btn {
+  margin-left: 10px;
+}
+
+
+.view-btn a,
+.edit-btn a {
+  text-decoration: none;
+  color: #416D19;
+}
+
+
+
+.delete-btn a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.buttonset button {
+  padding: 8px 16px; 
+  border: none; 
+  color: #fff; 
+  border-radius: 4px; 
+  cursor: pointer; 
+}
+
+.view-btn, .edit-btn {
+  background-color: #BFEA7C;
+}
+
+.delete-btn {
+  background-color: #FF7F50; 
+}
+
+.Appointment-link {
+  text-decoration: none;
+  color: black !important;
+}
+
+.card-body {
+  background-color: #def9b2;
+}
+
+
+/* dropdwon */
+.dropdown {
+  margin-bottom: 20px; /* Add margin at the bottom of the dropdown */
+}
+
+.dropdown select {
+  padding: 5px; /* Add padding around the dropdown options */
+  margin: 5px 0; /* Add margin above and below the dropdown */
+  width: 250px; /* Adjust the width of the dropdown as needed */
+}
+
+
+
+
+/* #apdashboardTable {
+  margin-top: 20px;
+} */
+
+/* #apdashboardTable table {
+  border-collapse: collapse;
+  width: 100%;
+} */
+
+/* .damn th, td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+} */
+
+/* #apdashboardTable th {
+  background-color: #BFEA7C;
+} */
+
+/* .navitr tr:hover {
+  background-color: #d6f6a3;
+} */
+
+/* #apdashboardTable {
+  margin-top: 20px;
+} */
+
+/* #apdashboardTable table {
+  border-collapse: collapse;
+  width: 100%;
+} */
+
+
+/* appointment dashboard body */
+.apdashBody {
+  padding: 3%;
+}
+
+
+.exportBtn button {
+  background-color: #BFEA7C;
+  color: #416D19;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.exportBtn button:hover {
+  background-color: #416D19;
+  color: #fff;
+}

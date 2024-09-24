@@ -1,0 +1,138 @@
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;
+     margin: 10px 50px 50px 50px;  
+  }
+  #wishlist{
+    width: 200px;
+    
+  }
+  #wishlist:hover{
+    transform: scale(1.05);
+    background-color: #9BCF53;
+  }
+  #addtocart{
+    width: 200px;
+    margin:2px;
+    
+  }
+
+  #addtocart:hover{
+    transform: scale(1.05);
+    background-color: #9BCF53;
+  }
+  
+  
+  .product {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .product img {
+    max-width: 100%;
+    height: 150px; /* Adjust the height to your desired value */
+    object-fit: cover; /* Ensures the aspect ratio is maintained */
+  }
+  
+  .product h2 {
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+  
+  /* Add more styling as needed */
+  #filter {
+    position: relative;
+    left:900px;
+    bottom:25px;
+  }
+  #search{
+    position: relative;
+    left:40px;
+  }
+  .username{
+    position: relative;
+    left:170px;
+    top:30px;
+    margin: 15px 50px 50px 10px;
+    color:#416D19 ;
+    font-family: "Poppins", sans-serif;
+    font-size:40px;
+    
+  }
+  #search{
+
+    position: relative;
+    top:20px;
+    left:230px;
+
+  }
+  
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+#expected_delivery{
+  /* background-color: #416D19; */
+  color: rgb(13, 13, 13);
+  font-size: 22px;
+  /* margin-top: 10px; */
+}
+#expected{
+  /* background-color: #517f25; */
+  color: rgb(0, 0, 0);
+  font-size: 22px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+#maximum{
+  font-size: 15px;
+}
+
+
+#summary{
+  text-align: center;
+  position: relative;
+  left:45px;
+ 
+ 
+}
+#summarybody{
+  padding-left: 10px;
+  padding-right: 10px;
+  
+
+}
+#summarybody2{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.but button.btnsub:hover {
+  background-color: #9BCF53;
+  transform: scale(1.05);
+}
+#shoppingCartbtn{
+  position: relative;
+  top:207px;
+  left:280px;
+
+  
+}
+#buttonWishlist{
+  /* position: relative;
+  top:180px;
+  left:270px; */
+  position: relative;
+  top :180;
+}
+#Wbutton{
+  position: relative;
+  top:100px;
+  right:50px;
+}
