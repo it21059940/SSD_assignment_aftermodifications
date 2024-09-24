@@ -27,17 +27,9 @@ import enrollmentRoutes from "./routes/enrollmentRoutes.js";
 import ContactRoutes from "./routes/ContactRoute.js"
 import WishlistRoutes from "./routes/WishlistRoutes.js"
 
-
-//configure env
 dotenv.config();
-
-//database config
 connectDB();
-
-//resr object
 const app = express();
-
-app.use(cors());
 app.use(bodyParser.json());
 
 //get the access of file upload
@@ -46,9 +38,58 @@ const __dirname = dirname(__filename);
 app.use("/Assets", express.static(__dirname + "/Assets"));
 app.use(fileUpload());
 
-//middelwares
+import helmet from 'helmet';
+
+// Configure Content Security Policy (CSP)
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'"],
+      styleSrc: ["'self'", "https://trusted-cdn.com"],
+      imgSrc: ["'self'", "https://images.example.com"],
+      connectSrc: ["'self'", "https://api.example.com"],
+      frameSrc: ["'self'", "https://youtube.com"],
+      fontSrc: ["'self'", "https://fonts.googleapis.com"],
+    },
+    reportOnly: false,
+  })
+);
+
+// Enable the "X-Content-Type-Options" header
+app.use(helmet({ contentSecurityPolicy: false, noSniff: true }));
+
+// Allowing only valid origins
+app.use(
+  cors({
+    origin: 'http://localhost:3000',
+    methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'],
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  })
+);
+
+// Middleware to set X-Frame-Options header to DENY- prevent Missing Anti-clickjacking Header
+app.use((req, res, next) => {
+  res.setHeader('X-Frame-Options', 'DENY');
+  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+  next();
+});
+
+// Remove the "X-Powered-By" header
+app.disable('x-powered-by');
+
+//preventing the timestamp disclosure
+app.use((req, res, next) => {
+  res.removeHeader('Last-Modified');
+  next();
+});
+
+app.disable('etag')
+
+
 app.use(express.json());
-// app.use(morgan("dev"));
+app.use(morgan("dev"));
 
 //routes
 app.use("/api/v1/auth", authRoutes);
@@ -56,23 +97,14 @@ app.use("/api/v1/payment", PaymentRoutes);
 app.use("/api/user", UserRoutes);
 app.use("/api/v1/appointment", appointmentRoutes);
 
-app.use(cors());
-app.use(express.json());
-app.use(morgan("dev"));
-
 //routes
-//app.use('api/v1/product',tokenRoutes);
 app.use("/api/user", UserRoutes);
 app.use("/api/v1/employees", empRoutes);
 app.use("/api/v1/Cart", CartRoutes);
 app.use("/api/v1/wishlist", WishlistRoutes);
-
-// app.use("/api/v1/Inventory", InventoryRoutes);
-
 app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", InventoryRoutes);
 app.use("/api/v1/supplier", SupplierRoutes);
-
 app.use('/api/v1/programs', programRoutes);
 app.use('/api/v1/employees', employeeRoutes);
 app.use('/api/v1/enrollments', enrollmentRoutes);

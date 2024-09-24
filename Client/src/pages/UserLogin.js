@@ -12,9 +12,6 @@ import { useAuth } from '../context/auth'
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode as jwt_decode } from "jwt-decode";
 
-
-
-
 function UserLogin() {
     const navigate = new useNavigate();
     const [formData, setFormData] = useState({
@@ -39,6 +36,7 @@ function UserLogin() {
                 password: formData.password
             }
             await axios.post('/api/user/getLoginDetails', loginDetails).then((res) => {
+                console.log("res::>> ", res)
                 if (formData.userName === res.data.loginDetails[0].email && formData.password === res.data.loginDetails[0].password) {
                     setAuth({
                         ...auth,
@@ -51,10 +49,12 @@ function UserLogin() {
             })
         }
     }
+
     function loginWithGoogle() {
-        localStorage.removeItem('auth'); // or localStorage.clear() to remove all ites
-        navigate('/UserLogin');
+        // localStorage.removeItem('auth'); // or localStorage.clear() to remove all ites
+        // navigate('/UserLogin');
     }
+
     const handleGoogleLogin = async (response) => {
         const decoded = jwt_decode(response.credential);
         const googleUser = {
